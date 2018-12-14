@@ -1,0 +1,36 @@
+﻿@model GerenciadorTarefas.Models.POCO.Login
+
+@{
+    ViewBag.Title = "Gerenciador de Tarefas";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Gerenciador de Tarefas</title>
+      <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <form class="form-signin" action="~/Login/ValidarLogin" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Entre com o login</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <p id="msgEmail"></p>
+        <input type="text" id="inputEmail" name="Email" class="form-control" placeholder="Email address" required autofocus value="@Model.Email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputSenha" name="Senha" class="form-control" placeholder="Password" required value="@Model.Senha">
+        <p id="msgSenha"></p>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Lembre-me
+            </label>
+        </div>
+        <button id="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js");
+</body>
+</html>
+

@@ -1,0 +1,109 @@
+﻿body {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+body .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+body .form-control:focus {
+  z-index: 2;
+}
+
+.gridRow {
+    margin-top:5px;    
+}
+
+.gridHeadCols {
+    background-color:lightskyblue;
+    color:white;
+    border: 1px solid gray;
+    text-align:center;
+    font-weight:bolder;
+    padding:2px;
+}
+
+.gridBodyCols {
+    background-color:lightskyblue;
+    border: 1px solid gray;
+    color:white;
+    padding-left:1px;
+    text-align:left;
+    font-style:oblique;
+    padding:2px;
+}
+
+.gridBodyColsCheck {
+    color:white;
+    border: 1px solid gray;
+    text-align:center;
+    background-color:lightskyblue;
+    padding-left:1px;
+}
+.gridCheckbox {
+    padding:0;
+    border:0;
+    margin:0;
+}

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GerenciadorTarefas.Models.POCO.Usuario>
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Incluir</button>
+<br>
+
+<div class="container-fluid">
+    <div class="row gridRow">
+        <div class="col-xs-4 col-sm-4 col-lg-4 gridHeadCols">Nome</div>
+        <div class="col-xs-4 col-sm-4 col-lg-4 gridHeadCols">Email</div>
+        <div class="col-xs-2 col-sm-2 col-lg-2 gridHeadCols">Permissão</div>
+    </div>
+    
+    @foreach (var item in Model)
+    {
+        <div  class="row @item.Id" onclick="RegisterBtnAltualizarOnClick('@item.Id')"  >
+            <div class="col-xs-4 col-sm-4 col-lg-4 gridBodyCols" > @item.Nome  </div>
+            <div class="col-xs-4 col-sm-4 col-lg-4 gridBodyCols" > @item.Email </div>
+            <div class="col-xs-2 col-sm-2 col-lg-2 gridBodyCols"> @item.Permissao.Tipo </div>
+        </div>
+    }
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="panel panel-primary class">
+            <div class="panel-heading">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Cadastro de Usuário</h4>
+            </div>
+            <div class="panel-body">
+                <div class="control-group">
+                    <label class="control-label" for="inputNome">Nome</label>
+                    <div class="controls">
+                        <input id="inputNome" class="form-control" placeholder="Digite seu Nome ..."  required="required" maxlength="50" />
+                        <span id="msgNome" class="msgValidacao" style="color: red; visibility: hidden">Informe seu nome.</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail">E-mail</label>
+                    <div class="controls">
+                        <input  id="inputEmail" class="form-control" placeholder="Digite o e-mail..."  type="email" required="required" MaxLength="50" />
+                        <span id="msgEmail" class="msgValidacao" style="color: red; visibility: hidden">Informe um email válido.</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPermissao">Permissão</label>
+                    <div class="controls">
+                        <select ID="dropPermissao" class="form-control"  placeholder="Escolha o Tipo de Permissao...">
+                            <option value="1">Administrador</option>
+                            <option value="2" selected >Usuário Básico</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group divSenha">
+                    <label class="control-label" for="inputSenha">Senha</label>
+                    <div class="controls">
+                        <input  id="inputSenha" class="form-control" type="password" placeholder="Digite a senha..."  required="required" MaxLength="10">
+                        <span id="msgSenha" class="msgValidacao" style="color: red; visibility: hidden">Senha Inválida.</span>
+                    </div>
+                </div>
+                <div class="control-group divSenha">
+                    <label class="control-label" for="inputConfirmaSenha">Senha</label>
+                    <div class="controls">
+                        <input id="inputConfirmaSenha" class="form-control" type="password" placeholder="Confirme a senha..."  required="required" MaxLength="10">
+                        <span id="msgConfirmaSenha" class="msgValidacao" style="color: red; visibility: hidden">Senha Inválida.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnSalvar" type="button" class="btn btn-default" data-dismiss="modal">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/_js/CadastroUsuario")
